@@ -67,7 +67,7 @@ plugins:
     args:
       auto: true
       force_overwrite: false
-      
+
   # 指定ECS的插件
   - tag: ecs_global
     type: ecs
@@ -81,7 +81,7 @@ plugins:
   - tag: ecs_is_lan
     type: query_matcher
     args:
-      ecs: 
+      ecs:
         - "0.0.0.0/8"
         - "10.0.0.0/8"
         - "100.64.0.0/10"
@@ -102,7 +102,7 @@ plugins:
   - tag: ecs_is_cn
     type: query_matcher
     args:
-      ecs: 
+      ecs:
         - "provider:chinaip"
 
   # 调整TTL的插件
