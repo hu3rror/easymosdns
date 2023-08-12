@@ -40,7 +40,7 @@ plugins:
     type: cache
     args:
       size: 8192
-      #redis: "redis://127.0.0.1:6379/0"
+      #redis: "REDIS_URL_PLACEHOLDER"
       lazy_cache_ttl: 86400
       cache_everything: true
       lazy_cache_reply_ttl: 1
@@ -49,7 +49,7 @@ plugins:
     args:
       size: 131072
       compress_resp: true
-      #redis: "redis://127.0.0.1:6379/0"
+      #redis: "REDIS_URL_PLACEHOLDER"
       lazy_cache_ttl: 86400
       cache_everything: true
       lazy_cache_reply_ttl: 5
@@ -382,15 +382,15 @@ servers:
   - exec: main_sequence
     timeout: 6
     listeners:
-      - protocol: udp
-        addr: "0.0.0.0:53"
-      - protocol: tcp
-        addr: "0.0.0.0:53"
-      #- protocol: http
-      #  addr: "127.0.0.1:9053"
-      #  url_path: "/dns-query"
-      #  get_user_ip_from_header: "X-Forwarded-For"
-      #- protocol: tls             
+      # - protocol: udp
+      #   addr: "0.0.0.0:53"
+      # - protocol: tcp
+      #   addr: "0.0.0.0:53"
+      - protocol: http
+        addr: ":PORT_PLACEHOLDER"
+        url_path: "PATH_PLACEHOLDER"
+        get_user_ip_from_header: "X-Forwarded-For"
+      #- protocol: tls
       #  addr: "0.0.0.0:853"
       #  cert: "/etc/mosdns/yourdomain.cert"  # TLS 所需证书文件。
       #  key: "/etc/mosdns/yourdomain.key"    # TLS 所需密钥文件。
