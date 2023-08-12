@@ -224,18 +224,20 @@ plugins:
     args:
       upstream:
         - addr: "223.5.5.5"
-        - addr: "tls://120.53.53.53:853"
-          enable_pipeline: true
+        - addr: "119.29.29.29"
 
   # 转发至远程服务器的插件
   - tag: forward_remote
     type: fast_forward
     args:
       upstream:
-        - addr: "tcp://208.67.220.220:5353"
+        - addr: "tcp://208.67.222.2:5353"
           enable_pipeline: true
           #socks5: "127.0.0.1:1080"
         - addr: "tls://8.8.4.4"
+          enable_pipeline: true
+          #socks5: "127.0.0.1:1080"
+        - addr: "tls://9.9.9.11"
           enable_pipeline: true
           #socks5: "127.0.0.1:1080"
 
@@ -245,7 +247,7 @@ plugins:
     args:
       upstream:
         - addr: "https://doh.apad.pro/dns-query"
-          bootstrap: "119.29.29.29"
+          bootstrap: "1.1.1.1"
           #dial_addr: "ip:port"
           #enable_http3: true
 
