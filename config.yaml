@@ -1,8 +1,8 @@
 # EasyMosdns v3.0(Final Release)
 # https://apad.pro/easymosdns
 log:
-    file: "./mosdns.log"
-    level: error
+    # file: "./mosdns.log"
+    level: info
 
 data_providers:
   - tag: chinalist
